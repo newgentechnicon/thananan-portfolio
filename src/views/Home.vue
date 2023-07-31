@@ -1,5 +1,5 @@
 <script>
-import AppBanner from '@/components/shared/AppBanner';
+import AppBanner from '@/components/shared/AppBanner.vue';
 import ProjectsGrid from '../components/projects/ProjectsGrid.vue';
 import Button from '../components/reusable/Button.vue';
 

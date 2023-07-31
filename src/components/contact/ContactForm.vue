@@ -44,5 +44,3 @@ export default { components: { Button, FormInput, FormTextarea } };
 		</div>
 	</div>
 </template>
-
-<style lang="scss" scoped></style>
