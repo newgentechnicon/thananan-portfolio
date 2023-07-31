@@ -87,13 +87,13 @@ export default {
 					<router-link to="/"
 						><img
 							v-if="theme === 'light'"
-							src="@/assets/images/logo-dark.svg"
+							src="@/assets/images/logo.svg"
 							class="w-36"
 							alt="Dark Logo"
 						/>
 						<img
 							v-else
-							src="@/assets/images/logo-light.svg"
+							src="@/assets/images/logo.svg"
 							class="w-36"
 							alt="Light Logo"
 						/>
@@ -145,9 +145,16 @@ export default {
 			>
 				<!-- Hire me button -->
 				<div class="hidden md:block">
-					<Button
+					<!-- <Button
 						title="Hire Me"
 						class="text-md font-general-medium bg-indigo-500 hover:bg-indigo-600 text-white shadow-sm rounded-md px-5 py-2.5 duration-300"
+						@click="showModal()"
+						aria-label="Hire Me Button"
+					/> -->
+					<Button
+						:disabled=true
+						title="Hire Me"
+						class="px-4 py-2.5 text-gray-500 tracking-wider bg-gray-300 rounded-lg duration-500"
 						@click="showModal()"
 						aria-label="Hire Me Button"
 					/>

@@ -7,7 +7,7 @@ const routes = [
 		name: 'Home',
 		component: Home,
 		meta: {
-			title: 'Stoman - Home',
+			title: 'Thananan - Home',
 		},
 	},
 	{
@@ -19,7 +19,7 @@ const routes = [
 		component: () =>
 			import(/* webpackChunkName: "about" */ '../views/About.vue'),
 		meta: {
-			title: 'Stoman - About',
+			title: 'Thananan - About',
 		},
 	},
 	{
@@ -31,7 +31,7 @@ const routes = [
 		component: () =>
 			import(/* webpackChunkName: "projects" */ '../views/Projects.vue'),
 		meta: {
-			title: 'Stoman - Projects',
+			title: 'Thananan - Projects',
 		},
 	},
 	{
@@ -45,7 +45,19 @@ const routes = [
 				/* webpackChunkName: "projects" */ '../views/SingleProject.vue'
 			),
 		meta: {
-			title: 'Stoman - Single Project',
+			title: 'Thananan - Single Project',
+		},
+	},
+	{
+		path: '/projects/sebuu',
+		name: 'SE BUU Projects',
+		// route level code-splitting
+		// this generates a separate chunk (projects.[hash].js) for this route
+		// which is lazy-loaded when the route is visited.
+		component: () =>
+			import(/* webpackChunkName: "projects" */ '../views/SEBUUwebProject.vue'),
+		meta: {
+			title: 'SE BUU - Projects',
 		},
 	},
 	{
@@ -57,7 +69,7 @@ const routes = [
 		component: () =>
 			import(/* webpackChunkName: "projects" */ '../views/Contact.vue'),
 		meta: {
-			title: 'Stoman - Contact',
+			title: 'Thananan - Contact',
 		},
 	},
 ];
@@ -85,18 +97,18 @@ router.beforeEach((to, from, next) => {
 	const nearestWithTitle = to.matched
 		.slice()
 		.reverse()
-		.find((r) => r.meta && r.meta.title);
+		.find((route) => route.meta && route.meta.title);
 
 	// Find the nearest route element with meta tags.
 	const nearestWithMeta = to.matched
 		.slice()
 		.reverse()
-		.find((r) => r.meta && r.meta.metaTags);
+		.find((route) => route.meta && route.meta.metaTags);
 
 	const previousNearestWithMeta = from.matched
 		.slice()
 		.reverse()
-		.find((r) => r.meta && r.meta.metaTags);
+		.find((route) => route.meta && route.meta.metaTags);
 
 	// If a route with a title was found, set the document (page) title to that value.
 	if (nearestWithTitle) {
